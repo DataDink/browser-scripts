@@ -3,7 +3,7 @@
   get: () => {
     if (this[accessor]) { return this[accessor]; }
     var element = this;
-    var toolbar = element[accessor] = document.createElement('div');
+    var toolbar = document.createElement('div');
     toolbar.style.width = 'auto';
     toolbar.style.height = '16px';
     toolbar.style.display = 'flex';
@@ -22,6 +22,6 @@
       if (!element.parentNode) { return toolbar.parentNode?.removeChild(toolbar); }
       element.parentNode.insertBefore(toolbar, element);
     }).observe(element, { });
-    return toolbar;
+    return element[accessor] = toolbar;
   }
 }))(Symbol('toolbar'));
