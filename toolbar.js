@@ -22,5 +22,6 @@
       if (!element.parentNode) { return toolbar.parentNode?.removeChild(toolbar); }
       element.parentNode.insertBefore(toolbar, element);
     }).observe(element, { });
+    return toolbar;
   }
 }))(Symbol('toolbar'));
