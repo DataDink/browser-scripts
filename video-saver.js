@@ -9,7 +9,7 @@
   for (var record of [...records]) {
     for ( var added of [...record?.addedNodes ?? []]) {
       if (!added?.matches?.call(added, 'video')) { continue; }
-      var url = added.getAttribute('src');
+      var url = added.getAttribute('src')?.replace(/^blob:/i/, '');
       var file = url?.split('/').pop();
       var button = added.parentNode?.insertBefore(document.createElement('a'), added);
       if (!button) { continue; }
