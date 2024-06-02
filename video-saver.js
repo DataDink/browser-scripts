@@ -13,8 +13,8 @@
       var file = url?.split('/').pop();
       var button = added.parentNode?.insertBefore(document.createElement('a'), added);
       if (!button) { continue; }
-      button.style.width = '32px';
-      button.style.height = '32px';
+      button.style.width = '16px';
+      button.style.height = '16px';
       button.style.display = 'block';
       button.style.position = 'absolute';
       button.style.zIndex = '999999999';
