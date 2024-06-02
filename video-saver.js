@@ -6,6 +6,7 @@
       _: handler([{addedNodes: [...document.querySelectorAll('video')]}])
     })
 )(records => {
+  console.log(records);
   for (var record of [...records]) {
     for ( var added of [...record?.addedNodes ?? []]) {
       if (!added?.matches?.call(added, 'video')) { continue; }
