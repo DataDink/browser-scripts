@@ -1,6 +1,6 @@
 (() => {
   const source = 'https://datadink.github.io/browser-scripts/';
-  if (document.querySelector(`script[src^="${source}"]`)) { return; }
+  if ([...document.querySelector(`script[src^="${source}"]`)].length > 1) { return; }
   for (var name of [
     'video-saver'
   ]) {
