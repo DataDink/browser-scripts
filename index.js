@@ -7,6 +7,6 @@
     var script = document.createElement('script');
     script.setAttribute('src', `${source}/${name}.js`);
     script.setAttribute('type', 'module');
-    document.head.appendChild(script);
+    document.body.appendChild(script);
   }
 })();
