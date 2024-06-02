@@ -3,7 +3,7 @@
   get: () => {
     if (this[accessor]) { return this[accessor]; }
     var element = this;
-    var toolbar = this[accessor] = document.createElement('div');
+    var toolbar = element[accessor] = document.createElement('div');
     toolbar.style.width = 'auto';
     toolbar.style.height = '16px';
     toolbar.style.display = 'flex';
@@ -15,6 +15,7 @@
     toolbar.style.alignItems = 'flex-start';
     toolbar.style.overflow = 'auto';
     toolbar.style.overflowY = 'hidden';
+    toolbar.style.zIndex = Number.MAX_SAFE_INTEGER;
     element.parentNode.insertBefore(toolbar, element);
     new MutationObserver(() => {
       if (toolbar.nextSibling === element) { return; }
